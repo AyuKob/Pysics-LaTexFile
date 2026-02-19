@@ -1,0 +1,115 @@
+\documentclass{jsarticle}
+\usepackage[dvipdfmx]{graphicx} % Required for inserting images
+\usepackage[dvipdfmx]{color}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{here}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage[top=40truemm,bottom=40truemm,left=30truemm,right=30truemm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{physics2}
+
+\usepackage[dvipdfmx, hidelinks]{hyperref}
+
+\begin{document}
+
+
+%//\makeatletter
+%//\newcommand*{\themonth}{\two@digits\month}
+%//\newcommand*{\theday}{\two@digits\day}
+%//\makeatother
+%//\renewcommand{\today}{{\the\year}年{\themonth}月{\thetoday}日}
+%//\makeatletter
+
+%\newcommand{\todayAD}{\number\year 年\number\month  月\number\day 日}
+%↑1桁表示
+
+\newcommand{\todayAD}{
+  \number\year 年
+  \ifnum\month<10 0\fi\number\month 月
+  \ifnum\day<10 0\fi\number\day 日}
+%\ifnum\month<10 0\fi は、月が10未満（1桁）のときに0を追加
+%\number\month は月の数字を出力する
+%同様に、日も \ifnum\day<10 0\fi\number\day で処理
+\newcommand{\dy}{$\rm Dy_2Pt_3Al_4$}
+\newcommand{\gd}{$\rm Gd_2Pt_3Al_4$}
+\newcommand{\ho}{$\rm Ho_2Pt_3Al_4$}
+\newcommand{\dys}[1]{$\rm Dy_2Pt_3Al_4 \,\#s{#1}$}
+\newcommand{\dyp}[1]{$\rm Dy_2Pt_3Al_4 \,\#p{#1}$}
+\renewcommand{\contentsname}{目次}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\renewcommand{\refname}{参考文献}
+
+\newcommand{\SIeq}[2]{\SI[parse-numbers=false]{#1}{#2}}
+%数式＋単位のとき
+
+\DeclareSIUnit\angstrom{\text{\AA}}
+%Å定義(siunitx非推奨)。これで\angstromが問題なく使える。
+
+\begin{flushright}
+    \todayAD
+\end{flushright}
+\begin{center}
+    令和7年度\\
+    学士論文\\
+    \vskip\baselineskip
+    新規低対称・多サイト希土類カゴ状化合物\dy の単結晶育成及び物性測定
+    \vskip\baselineskip
+    22RP019 小林歩夢
+    \vskip\baselineskip
+    指導教員\\
+    道村真司 准教授
+    \vskip\baselineskip
+    埼玉大学 理学部 物理学科\\
+    小坂・道村・佐藤研究室
+\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{序論}
+
+
+\bibliography{myrefs}
+\bibliographystyle{junsrt_3}
+
+
+\begin{comment}
+\begin{table}[H]
+\begin{center}
+\caption{MiniFlex600 測定条件}
+\label{t:mf600zyoken}
+\begin{tabular}{c|l}
+    \hline
+    \multicolumn{2}{c}{MiniFlex600 測定条件} \\ \hline\hline
+    X線源 & Cu 管球 \SI{40}{kV} \SI{15}{mA} \\ \hline
+    ゴニオメーター半径 & \SI{150}{mm} \\ \hline
+    スリット条件 & 可変＋固定スリットシステム\\ \hline
+    光学素子 & Soller(inc.) : \SI{2.5}{\degree} \\ \hline
+    & IHS : \SI{10.0}{mm} \\ \hline
+    & DS : \SI{0.625}{\degree} \\ \hline
+    & SS : \SI{13.0}{mm}(Open) \\ \hline
+    & Soller(rec.) : \SI{2.5}{\degree} \\ \hline
+    & RS1 : \SI{8.0}{mm} \\ \hline
+    & RS2 : \SI{13.0}{mm}(Open) \\ \hline
+    & 単色化 : ${\rm K}\beta$フィルター(×1)[Ni箔] \\ \hline
+    試料台 & 標準ガラス板(裏面) \\ \hline
+    検出器 & 高速1次元検出器 D/teX Ultra2 \\ \hline
+    スキャン条件 & スキャン軸 : $2\theta /\theta$ \\ \hline
+    & モード : 連続 \\ \hline
+    & 範囲($2\theta$) : \SIeq{3 - 120}{\degree} \\ \hline
+    & ステップ : \SI{0.01}{deg/step} \\ \hline
+    & スピード : \SI{3.0}{deg/min} \\ \hline
+
+
+\end{tabular}
+\end{center}
+\end{table}
+\end{comment}
+
+\end{document}
